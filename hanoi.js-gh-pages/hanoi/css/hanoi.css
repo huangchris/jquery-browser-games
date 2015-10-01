@@ -1,0 +1,39 @@
+.towerStack{
+  height: 180px;
+  width: 200px;
+  border-bottom: 5px solid black;
+  margin: 50px;
+  float: left;
+  padding: 0;
+  list-style: none;
+}
+
+.view {
+  width: 900px;
+}
+
+li {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 40%;
+  background-color: grey;
+  height: 50px;
+  width: 50px;
+
+}
+
+.medium {
+  width: 100px;
+}
+
+.large {
+  width: 150px;
+}
+
+.empty {
+  width: 0;
+}
+
+.selected {
+  border-color: cornflowerblue;
+}

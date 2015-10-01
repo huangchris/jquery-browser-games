@@ -1,0 +1,27 @@
+li {
+  font-size: 64px;
+  float: left;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  background-color: gray;
+}
+
+li:hover {
+  background-color: yellow;
+}
+
+
+ul {
+  list-style: none;
+  width: 310px;
+  height: 310px;
+}
+
+.x{
+  background-color: white;
+}
+
+.o{
+  background-color: white;
+}
