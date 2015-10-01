@@ -41,9 +41,16 @@ Game.prototype.run = function () {
   var that = this;
   var timerID = setInterval(function(){
     that.move(timerID);
-  },this.speed);
+  },that.speed);
   setInterval(function(){
-    this.speed -= 50;
+    if(window.game.speed > 50){
+      window.game.speed -= 50;
+      console.log("sped up:" + window.game.speed);
+      clearInterval(timerID);
+      timerID = setInterval(function(){
+        that.move(timerID);
+      },that.speed);
+    }
   }, 10000);
 };
 
