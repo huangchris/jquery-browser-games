@@ -42,12 +42,12 @@ Game.prototype.run = function () {
   var timerID1 = setInterval(function(){
     that.move(timerID1);
   },that.speed);
-  setInterval(function(){
+  that.timerID2 = setInterval(function(){
     if(window.game.speed > 50){
       window.game.speed -= 50;
       console.log("sped up:" + window.game.speed);
       clearInterval(timerID1);
-      timerID2 = setInterval(function(){
+      timerID1 = setInterval(function(){
         that.move(timerID1);
       },that.speed);
     }
@@ -70,7 +70,8 @@ Game.prototype.move = function (timerID) {
     this.snake.shift();
   }
   if(this.lostGame(newPos)){
-    clearInterval(timerID1);
+    clearInterval(this.timerID2)
+    clearInterval(timerID);
     alert("You lose");
   }
   else{
