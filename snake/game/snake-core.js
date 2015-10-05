@@ -40,13 +40,13 @@ Game.prototype.genFood = function (newPos) {
 Game.prototype.run = function () {
   var that = this;
   var timerID1 = setInterval(function(){
-    that.move(timerID);
+    that.move(timerID1);
   },that.speed);
   setInterval(function(){
     if(window.game.speed > 50){
       window.game.speed -= 50;
       console.log("sped up:" + window.game.speed);
-      clearInterval(timerID);
+      clearInterval(timerID1);
       timerID2 = setInterval(function(){
         that.move(timerID1);
       },that.speed);
@@ -70,7 +70,7 @@ Game.prototype.move = function (timerID) {
     this.snake.shift();
   }
   if(this.lostGame(newPos)){
-    clearInterval(timerID);
+    clearInterval(timerID1);
     alert("You lose");
   }
   else{
