@@ -39,7 +39,7 @@ Game.prototype.genFood = function (newPos) {
 
 Game.prototype.run = function () {
   var that = this;
-  var timerID = setInterval(function(){
+  var timerID1 = setInterval(function(){
     that.move(timerID);
   },that.speed);
   setInterval(function(){
@@ -47,8 +47,8 @@ Game.prototype.run = function () {
       window.game.speed -= 50;
       console.log("sped up:" + window.game.speed);
       clearInterval(timerID);
-      timerID = setInterval(function(){
-        that.move(timerID);
+      timerID2 = setInterval(function(){
+        that.move(timerID1);
       },that.speed);
     }
   }, 10000);
